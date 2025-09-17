@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise Landscapes - Expert Lawn Care & Landscape Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #2c6e49;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #f8f9fa;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1585060544812-6b45742d762f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2c6e49;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            background-color: #225b3b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Services section */
+        .services {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: #2c6e49;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        /* Gallery section */
+        .gallery {
+            padding: 5rem 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Enhanced Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            color: #2c6e49;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        /* Enhanced Form Styles */
+        .contact-form-container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .contact-form-container h3 {
+            color: #2c6e49;
+            margin-bottom: 1.8rem;
+            font-size: 1.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .contact-form-container h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #2c6e49;
+            border-radius: 3px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c6e49;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 14px 15px 14px 45px;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background-color: #f9fbf9;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #2c6e49;
+            box-shadow: 0 0 0 3px rgba(44, 110, 73, 0.15);
+            background-color: #fff;
+        }
+        
+        .form-input::placeholder {
+            color: #a0a7b0;
+        }
+        
+        .form-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #2c6e49;
+            font-size: 1.1rem;
+        }
+        
+        textarea.form-input {
+            min-height: 140px;
+            resize: vertical;
+            padding-left: 45px;
+        }
+        
+        .form-btn {
+            width: 100%;
+            padding: 14px;
+            background: #2c6e49;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .form-btn:hover {
+            background: #225b3b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 110, 73, 0.3);
+        }
+        
+        .form-btn:active {
+            transform: translateY(0);
+        }
+        
+        .form-alert {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .alert-success {
+            background: #e9f7ef;
+            color: #2c6e49;
+            border: 1px solid #c3e6d0;
+        }
+        
+        .alert-error {
+            background: #ffe6e6;
+            color: #d32f2f;
+            border: 1px solid #ffcdd2;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #2c6e49;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #1e5330;
+            transform: translateY(-3px);
+        }
+        
+        .map-container {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c6e49;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .contact-form-container {
+                padding: 1.8rem;
+            }
+            
+            .form-input {
+                padding: 12px 12px 12px 40px;
+            }
+            
+            .form-icon {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Paradise Landscapes</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Outdoor Space</h1>
+            <p>Expert lawn care and landscape services for beautiful, functional yards</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('assets/lawncare/1.jpg');"></div>
+                    <div class="service-content">
+                        <h3>Weekly Lawn Maintenance</h3>
+                        <p>Keep your lawn pristine with our regular maintenance services including mowing, edging, and trimming.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1585060544812-6b45742d762f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Landscape Design</h3>
+                        <p>Custom landscape designs that transform your outdoor space into a beautiful and functional paradise.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1611251432658-57250f26a871?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Patio Installations</h3>
+                        <p>Professional patio design and installation to create the perfect outdoor living area.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <div class="gallery-grid">
+                <div class="service-img" style="background-image: url('assets/creatingpanting/1.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/creatingpanting/2.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/creatingpanting/3.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/creatingpanting/4.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/creatingpanting/4.jpg');"></div>
+
+                <div class="service-img" style="background-image: url('assets/gardendesign/1.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardendesign/2.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardendesign/3.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardendesign/4.jpg');"></div>
+
+                <div class="service-img" style="background-image: url('assets/gardercontainer/1.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardercontainer/2.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardercontainer/3.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardercontainer/4.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardercontainer/5.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardercontainer/6.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardercontainer/7.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardercontainer/8.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/gardercontainer/9.jpg');"></div>
+
+                <div class="service-img" style="background-image: url('assets/landscapingdesigns/1.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/landscapingdesigns/2.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/landscapingdesigns/3.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/landscapingdesigns/4.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/landscapingdesigns/5.jpg');"></div>
+
+                <div class="service-img" style="background-image: url('assets/lawncare/1.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/lawncare/2.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/lawncare/3.jpg');"></div>
+
+                <div class="service-img" style="background-image: url('assets/pathdesign/1.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/pathdesign/2.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/pathdesign/3.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/pathdesign/4.jpg');"></div>
+
+
+                <div class="service-img" style="background-image: url('assets/patioinstalations/1.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/patioinstalations/2.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/patioinstalations/3.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/patioinstalations/4.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/patioinstalations/5.jpg');"></div>
+
+                <div class="service-img" style="background-image: url('assets/plantbeds/1.jpg');"></div>             
+                <div class="service-img" style="background-image: url('assets/plantbeds/2.jpg');"></div>   
+                <div class="service-img" style="background-image: url('assets/plantbeds/3.jpg');"></div> 
+                <div class="service-img" style="background-image: url('assets/plantbeds/4.jpg');"></div>             
+                <div class="service-img" style="background-image: url('assets/plantbeds/5.jpg');"></div>   
+                <div class="service-img" style="background-image: url('assets/plantbeds/6.jpg');"></div> 
+                <div class="service-img" style="background-image: url('assets/plantbeds/7.jpg');"></div> 
+                <div class="service-img" style="background-image: url('assets/plantbeds/8.jpg');"></div>             
+                <div class="service-img" style="background-image: url('assets/plantbeds/9.jpg');"></div> 
+
+                <div class="service-img" style="background-image: url('assets/weedremoval/1.jpg');"></div>              
+                <div class="service-img" style="background-image: url('assets/weedremoval/2.jpg');"></div>
+                <div class="service-img" style="background-image: url('assets/weedremoval/3.jpg');"></div> 
+
+
+           </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>Butterworth, East London, Durban</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
+                            <p>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>084 990 2333</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>info@paradiselandscapes.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.636124578758!2d18.4729113152142!3d-33.92467308063938!2m3!1f0!2f0!3f0!4m13!3e2!4m5!1s0x1dcc5d7f68c933a7%3A0x6a6d2cef6fb4026!2sCape%20Town!3m2!1d-33.9248685!2d18.4240553!4m5!1s0x1e2ecf656c2cc36f%3A0x34984c3290532c8!2sDurban!3m2!1d-29.858680399999998!2d31.0218404!5e0!3m2!1sen!2sza!4v1657542314186!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h3>Request a Free Quote</h3>
+                    <div id="formAlert" class="form-alert"></div>
+                    
+                    <!-- Updated form action to use FormSubmit.co -->
+                    <form id="quoteForm" action="https://formsubmit.co/amilisiwem@gmail.com" method="POST">
+                        <!-- FormSubmit configuration -->
+                        <input type="hidden" name="_subject" value="New quote request from Paradise Landscapes website">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <i class="form-icon fas fa-user"></i>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <i class="form-icon fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <i class="form-icon fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <i class="form-icon fas fa-clipboard-list"></i>
+                            <select id="service" name="service" class="form-input">
+                                <option value="">Select a service</option>
+                                <option value="Weekly Lawn Maintenance">Weekly Lawn Maintenance</option>
+                                <option value="Landscape Design">Landscape Design</option>
+                                <option value="Patio Installations">Patio Installations</option>
+                                <option value="Irrigation Systems">Irrigation Systems</option>
+                                <option value="Other Service">Other Service</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <i class="form-icon fas fa-edit"></i>
+                            <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Paradise Landscapes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced form submission handling
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            const formAlert = document.getElementById('formAlert');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name === '' || email === '' || message === '') {
+                e.preventDefault();
+                formAlert.textContent = 'Please fill in all required fields';
+                formAlert.style.display = 'block';
+                formAlert.className = 'form-alert alert-error';
+                return;
+            }
+            
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                e.preventDefault();
+                formAlert.textContent = 'Please enter a valid email address';
+                formAlert.style.display = 'block';
+                formAlert.className = 'form-alert alert-error';
+                return;
+            }
+            
+            // If validation passes, the form will submit to FormSubmit
+            formAlert.textContent = 'Sending your message...';
+            formAlert.style.display = 'block';
+            formAlert.className = 'form-alert alert-success';
+        });
+        
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
